@@ -1,659 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>Srinivas Portfolio</title>
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-
-<style>
-
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-  scroll-behavior:smooth;
-}
-
-
-body{
-  background:#0d0d0d;
-  color:white;
-}
-
-
-/* NAVBAR */
-
-
-nav{
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 10%;
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:1000;
-  background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(10px);
-}
-
-
-.logo{
-  font-size:28px;
-  font-weight:700;
-}
-
-
-.logo span{
-  color:#ff6b00;
-}
-
-
-nav ul{
-  display:flex;
-  list-style:none;
-}
-
-
-nav ul li{
-  margin-left:30px;
-}
-
-
-nav ul li a{
-  text-decoration:none;
-  color:white;
-  transition:0.3s;
-}
-
-
-nav ul li a:hover{
-  color:#ff6b00;
-}
-
-
-/* HERO SECTION */
-
-
-.hero{
-  width:100%;
-  height:100vh;
-  background:url('images/bg.jpg') center/cover no-repeat;
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
-
-
-.overlay{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.7);
-}
-
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  animation:fadeUp 1.2s ease;
-}
-
-
-.profile-img{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  object-fit:cover;
-  border:5px solid #ff6b00;
-  margin-bottom:20px;
-  box-shadow:0 0 30px rgba(255,107,0,0.7);
-  animation:zoomIn 1.5s ease;
-}
-
-
-.hero h1{
-  font-size:70px;
-  margin-bottom:10px;
-}
-
-
-.hero h1 span{
-  color:#ff6b00;
-}
-
-
-.hero p{
-  font-size:22px;
-  color:#ddd;
-}
-
-
-.btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:14px 35px;
-  background:#ff6b00;
-  color:white;
-  text-decoration:none;
-  border-radius:30px;
-  transition:0.4s;
-  font-weight:600;
-}
-
-
-.btn:hover{
-  background:white;
-  color:black;
-  transform:scale(1.05);
-}
-
-
-/* SECTION */
-
-
-section{
-  padding:100px 10%;
-}
-
-
-.section-title{
-  font-size:40px;
-  margin-bottom:40px;
-  position:relative;
-}
-
-
-.section-title::after{
-  content:'';
-  width:70px;
-  height:4px;
-  background:#ff6b00;
-  position:absolute;
-  left:0;
-  bottom:-10px;
-}
-
-
-/* ABOUT */
-
-
-.about{
-  background:#111;
-  padding:35px;
-  border-radius:15px;
-  line-height:1.9;
-  color:#ccc;
-  transition:0.4s;
-}
-
-
-.about:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 20px rgba(255,107,0,0.2);
-}
-
-
-/* SKILLS */
-
-
-.skills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-}
-
-
-.skills span{
-  padding:12px 20px;
-  border:1px solid #333;
-  border-radius:30px;
-  background:#111;
-  transition:0.4s;
-}
-
-
-.skills span:hover{
-  background:#ff6b00;
-  transform:translateY(-5px);
-}
-
-
-/* PROJECTS */
-
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-
-
-.card{
-  background:#111;
-  padding:30px;
-  border-radius:15px;
-  transition:0.4s;
-  border:1px solid #222;
-}
-
-
-.card:hover{
-  transform:translateY(-10px);
-  border-color:#ff6b00;
-  box-shadow:0 0 20px rgba(255,107,0,0.2);
-}
-
-
-.card h3{
-  margin-bottom:15px;
-  color:#ff6b00;
-}
-
-
-/* EXPERIENCE */
-
-
-.timeline{
-  border-left:3px solid #ff6b00;
-  padding-left:25px;
-}
-
-
-.timeline div{
-  margin-bottom:30px;
-  background:#111;
-  padding:20px;
-  border-radius:10px;
-  transition:0.4s;
-}
-
-
-.timeline div:hover{
-  transform:translateX(10px);
-}
-
-
-/* CERTIFICATES */
-
-
-.certificates{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:25px;
-}
-
-
-.cert-card{
-  background:#111;
-  padding:20px;
-  border-radius:15px;
-  transition:0.4s;
-}
-
-
-.cert-card:hover{
-  transform:translateY(-10px);
-}
-
-
-.cert-card img{
-  width:100%;
-  border-radius:10px;
-  margin-bottom:15px;
-}
-
-
-/* CONTACT */
-
-
-.contact-box{
-  background:#111;
-  padding:40px;
-  border-radius:15px;
-  line-height:2;
-}
-
-
-/* FOOTER */
-
-
-footer{
-  text-align:center;
-  padding:25px;
-  background:black;
-  color:#aaa;
-}
-
-
-/* ANIMATION */
-
-
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(50px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-
-@keyframes zoomIn{
-  from{
-    opacity:0;
-    transform:scale(0.5);
-  }
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
-}
-
-
-/* MOBILE */
-
-
-@media(max-width:768px){
-
-
-nav{
-  flex-direction:column;
-}
-
-
-nav ul{
-  margin-top:15px;
-}
-
-
-.hero h1{
-  font-size:45px;
-}
-
-
-.hero p{
-  font-size:18px;
-}
-
-
-.profile-img{
-  width:140px;
-  height:140px;
-}
-
-
-}
-
-
-</style>
-</head>
-
-
-<body>
-
-
-<!-- NAVBAR -->
-
-
-<nav>
-
-
-<div class="logo">
-Port<span>folio</span>
-</div>
-
-
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#certificates">Certificates</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
-
-</nav>
-
-
-<!-- HERO -->
-
-
-<section class="hero" id="home">
-
-
-<div class="overlay"></div>
-
-
-<div class="hero-content">
-
-
-<img src="images/srinivas.jpg" class="profile-img">
-
-
-<h1>Hi, I'm <span>Srinivas</span></h1>
-
-
-<p>SEO Analyst | Digital Marketer | Social Media Marketing</p>
-
-
-<a href="#" class="btn">Download CV</a>
-
-
-</div>
-
-
-</section>
-
-
 <!-- ABOUT -->
-
 
 <section id="about">
 
-
 <h2 class="section-title">About Me</h2>
-
 
 <div class="about">
 
-
-B.Sc. Computer Science graduate with a strong interest in Digital Marketing and SEO. Currently working as an SEO Analyst with hands-on experience in search optimization, keyword research, and improving online visibility. Passionate about combining technical knowledge with digital strategies to drive brand growth and better online performance.
-
+I'm a passionate Digital Marketing Specialist with expertise in SEO, Social Media Marketing, and Web Development. I enjoy helping businesses grow their online presence through strategic marketing campaigns and search engine optimization techniques.
 
 </div>
 
-
 </section>
-
 
 <!-- SKILLS -->
 
-
 <section id="skills">
-
 
 <h2 class="section-title">Skills</h2>
 
-
 <div class="skills">
 
-
-<span>Search Engine Optimization</span>
-<span>On-Page SEO</span>
-<span>Off-Page SEO</span>
-<span>Technical SEO</span>
-<span>Local SEO</span>
+<span>SEO</span>
 <span>Google Analytics</span>
-<span>Google Search Console</span>
-<span>Keyword Research</span>
-<span>Content Optimization</span>
 <span>Social Media Marketing</span>
-
+<span>Content Marketing</span>
+<span>WordPress</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>React</span>
+<span>Digital Advertising</span>
 
 </div>
-
 
 </section>
-
-
-<!-- PROJECTS -->
-
-
-<section id="projects">
-
-
-<h2 class="section-title">Projects</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-<h3>SEO Optimization</h3>
-<p>Optimized business websites using On-Page and Technical SEO strategies.</p>
-</div>
-
-
-<div class="card">
-<h3>Keyword Research</h3>
-<p>Performed competitor analysis and keyword planning for better rankings.</p>
-</div>
-
-
-<div class="card">
-<h3>Local SEO</h3>
-<p>Improved local business visibility through Local SEO optimization.</p>
-</div>
-
-
-<div class="card">
-<h3>Google Analytics</h3>
-<p>Tracked website performance and analyzed traffic insights.</p>
-</div>
-
-
-</div>
-
-
-</section>
-
 
 <!-- EXPERIENCE -->
 
-
 <section id="experience">
-
 
 <h2 class="section-title">Experience</h2>
 
-
 <div class="timeline">
 
+<div>
+<h3>Senior SEO Specialist</h3>
+<p>ABC Digital Agency | 2024 - Present</p>
+</div>
 
 <div>
-<h3>SEO Analyst</h3>
-<p>TechNest Technologies | May 2025 - Present</p>
+<h3>Digital Marketing Executive</h3>
+<p>XYZ Solutions | 2022 - 2024</p>
 </div>
 
-
-<div>
-<h3>Digital Marketing Course</h3>
-<p>Vinsup Skill Academy | June 2025 - July 2025</p>
 </div>
-
-
-</div>
-
 
 </section>
 
+<!-- PROJECTS -->
 
-<!-- CERTIFICATES -->
+<section id="projects">
 
+<h2 class="section-title">Projects</h2>
 
-<section id="certificates">
+<div class="grid">
 
-
-<h2 class="section-title">Certificates</h2>
-
-
-<div class="certificates">
-
-
-<div class="cert-card">
-<img src="images/certificate1.jpg">
-<h3>Digital Marketing Certificate</h3>
-<p>Vinsup Skill Academy</p>
+<div class="card">
+<h3>E-Commerce SEO</h3>
+<p>Improved organic traffic by 150% through technical and on-page SEO.</p>
 </div>
 
-
-<div class="cert-card">
-<img src="images/certificate2.jpg">
-<h3>SEO Training Certificate</h3>
-<p>Professional SEO Training</p>
+<div class="card">
+<h3>Local Business Growth</h3>
+<p>Ranked multiple local businesses in Google's top search results.</p>
 </div>
 
-
+<div class="card">
+<h3>Social Media Campaign</h3>
+<p>Managed campaigns that increased engagement and brand awareness.</p>
 </div>
 
+</div>
 
 </section>
-
 
 <!-- CONTACT -->
 
-
 <section id="contact">
-
 
 <h2 class="section-title">Contact</h2>
 
-
 <div class="contact-box">
- 
-📧 srinivash1602@gmail.com <br><br>
 
+📧 example@gmail.com <br><br>
 
-📞 +91 6381086665 <br><br>
+📞 +91 9876543210 <br><br>
 
-
-📍 Chennai, India
-
+📍 Chennai, Tamil Nadu, India
 
 </div>
 
-
 </section>
-
-
-<!-- FOOTER -->
-
-
-<footer>
-
-
-© 2026 Srinivas Portfolio | SEO Analyst & Digital Marketer
-
-
-</footer>
-
-
-</body>
-</html>
