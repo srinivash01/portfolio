@@ -752,3 +752,117 @@ transform:translateY(0);
     font-weight:600;
     letter-spacing:2px;
 }
+
+/* ===========================
+MOBILE RESPONSIVE
+=========================== */
+
+@media (max-width:768px){
+
+    header{
+        padding:15px 5%;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0;
+        font-size:14px;
+    }
+
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding:120px 5% 60px;
+        gap:40px;
+    }
+
+    .hero-text h1{
+        font-size:42px;
+    }
+
+    .hero-text h2{
+        font-size:24px;
+    }
+
+    .hero-text h3{
+        font-size:20px;
+    }
+
+    .hero-text p{
+        max-width:100%;
+        font-size:15px;
+    }
+
+    .hero-image img{
+        width:240px;
+        height:240px;
+    }
+
+    .about{
+        padding:60px 5%;
+        padding-left:20px;
+    }
+
+    .about-content h2{
+        font-size:32px;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+
+    .skills{
+        padding:70px 5%;
+    }
+
+    .skills-container{
+        grid-template-columns:1fr;
+    }
+
+    .skill-box{
+        padding:30px;
+    }
+
+    .certificate-heading{
+        font-size:38px;
+    }
+
+    .certificate-card{
+        width:260px;
+    }
+
+    .circle{
+        width:140px;
+        height:140px;
+    }
+
+    .education{
+        padding:70px 5%;
+    }
+
+    .contact-section{
+        padding:70px 5%;
+    }
+
+    .contact-box{
+        width:100%;
+    }
+
+    footer{
+        padding:30px 5%;
+    }
+
+    #topBtn{
+        width:48px;
+        height:48px;
+        font-size:18px;
+    }
+}
