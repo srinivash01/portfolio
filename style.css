@@ -388,22 +388,41 @@ font-size:22px;
 EXPERIENCE
 =========================== */
 
+.experience{
+    padding:100px 8%;
+}
+
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
 .timeline-item{
-    width:45%;
-    background:#000;
+    background:#000000;
     padding:25px;
     border-left:5px solid #edd676;
     border-radius:12px;
+    transition:.3s;
+
+    /* Right side align */
+    width:45%;
+    margin-left:auto;
 }
 
-.timeline-item:nth-child(odd){
-    margin-right:auto;   /* Left */
+.timeline-item:hover{
+    transform:translateX(10px);
 }
 
-.timeline-item:nth-child(even){
-    margin-left:auto;    /* Right */
+.timeline-item h3{
+    color:#edd676;
+    margin-bottom:10px;
 }
 
+.timeline-item span{
+    color:#94a3b8;
+    font-size:14px;
+}
 
 /* ===========================
 EDUCATION
